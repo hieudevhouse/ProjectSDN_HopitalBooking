@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard</title>
+  <link rel="stylesheet" href="/css/admin.css">
+</head>
+<body>
+  <header>
+    <h1>Admin Dashboard</h1>
+    <a href="/logout">Logout</a>
+  </header>
+
+  <div class="container">
+    <div class="admin-dashboard">
+      <% if (error) { %>
+        <p class="error"><%= error %></p>
+      <% } %>
+
+      <h2>Statistics</h2>
+      <div class="stats">
+        <div class="stat-box">
+          <h3>Total Accounts</h3>
+          <p><%= totalAccounts %></p>
+        </div>
+        <div class="stat-box">
+          <h3>Total Doctors</h3>
+          <p><%= totalDoctors %></p>
+        </div>
+        <div class="stat-box">
+          <h3>Total Orders</h3>
+          <p><%= totalOrders %></p>
+        </div>
+        <div class="stat-box">
+          <h3>Total Payments</h3>
+          <p><%= totalPayments %></p>
+        </div>
+      </div>
+
+      <!-- Doctors Section -->
+      <h2>Doctors</h2>
+      <a href="/admin/doctors/add" class="add-btn">Add Doctor</a>
+      <table>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Specialty</th>
+            <th>Location</th>
+            <th>Status</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% doctors.forEach(doctor => { %>
+            <tr>
+              <td><%= doctor.user_id.name %></td>
+              <td><%= doctor.specialty %></td>
+              <td><%= doctor.location %></td>
+              <td><%= doctor.status %></td>
+              <td>
+                <a href="/admin/doctors/edit/<%= doctor._id %>">Edit</a>
+                <a href="/admin/doctors/delete/<%= doctor._id %>">Delete</a>
+              </td>
+            </tr>
+          <% }) %>
+        </tbody>
+      </table>
+
+      <!-- Medicines Section -->
+      <h2>Medicines</h2>
+      <a href="/admin/medicines/add" class="add-btn">Add Medicine</a>
+      <table>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Illness</th>
+            <th>Price</th>
+            <th>Stock</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% medicines.forEach(medicine => { %>
+            <tr>
+              <td><%= medicine.name %></td>
+              <td><%= medicine.type %></td>
+              <td><%= medicine.illness %></td>
+              <td><%= medicine.price %></td>
+              <td><%= medicine.stock %></td>
+              <td>
+                <a href="/admin/medicines/edit/<%= medicine._id %>">Edit</a>
+                <a href="/admin/medicines/delete/<%= medicine._id %>">Delete</a>
+              </td>
+            </tr>
+          <% }) %>
+        </tbody>
+      </table>
+
+      <!-- News Section -->
+      <h2>News</h2>
+      <a href="/admin/news/add" class="add-btn">Add News</a>
+      <table>
+        <thead>
+          <tr>
+            <th>Title</th>
+            <th>Category</th>
+            <th>Priority</th>
+            <th>Status</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% news.forEach(item => { %>
+            <tr>
+              <td><%= item.title %></td>
+              <td><%= item.category %></td>
+              <td><%= item.priority %></td>
+              <td><%= item.status %></td>
+              <td>
+                <a href="/admin/news/edit/<%= item._id %>">Edit</a>
+                <a href="/admin/news/delete/<%= item._id %>">Delete</a>
+              </td>
+            </tr>
+          <% }) %>
+        </tbody>
+      </table>
+
+      <!-- HealthInfos Section -->
+      <h2>Health Information</h2>
+      <a href="/admin/healthinfos/add" class="add-btn">Add Health Info</a>
+      <table>
+        <thead>
+          <tr>
+            <th>Disease Name</th>
+            <th>Symptoms</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% healthinfos.forEach(info => { %>
+            <tr>
+              <td><%= info.disease_name %></td>
+              <td><%= info.symptoms %></td>
+              <td>
+                <a href="/admin/healthinfos/edit/<%= info._id %>">Edit</a>
+                <a href="/admin/healthinfos/delete/<%= info._id %>">Delete</a>
+              </td>
+            </tr>
+          <% }) %>
+        </tbody>
+      </table>
+
+      <!-- Orders Section -->
+      <h2>Orders</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>User</th>
+            <th>Total Amount</th>
+            <th>Status</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% orders.forEach(order => { %>
+            <tr>
+              <td><%= order.user_id.name %></td>
+              <td><%= order.total_amount %></td>
+              <td><%= order.status %></td>
+              <td>
+                <a href="/admin/orders/edit/<%= order._id %>">Edit</a>
+                <a href="/admin/orders/delete/<%= order._id %>">Delete</a>
+              </td>
+            </tr>
+          <% }) %>
+        </tbody>
+      </table>
+
+      <!-- Payments Section -->
+      <h2>Payments</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>User</th>
+            <th>Amount</th>
+            <th>Method</th>
+            <th>Status</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% payments.forEach(payment => { %>
+            <tr>
+              <td><%= payment.user_id.name %></td>
+              <td><%= payment.amount %></td>
+              <td><%= payment.method %></td>
+              <td><%= payment.status %></td>
+              <td>
+                <a href="/admin/payments/edit/<%= payment._id %>">Edit</a>
+                <a href="/admin/payments/delete/<%= payment._id %>">Delete</a>
+              </td>
+            </tr>
+          <% }) %>
+        </tbody>
+      </table>
+
+      <!-- Feedbacks Section -->
+      <h2>Feedbacks</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>User</th>
+            <th>Subject</th>
+            <th>Content</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% feedbacks.forEach(feedback => { %>
+            <tr>
+              <td><%= feedback.user_id.name %></td>
+              <td><%= feedback.subject %></td>
+              <td><%= feedback.content %></td>
+              <td>
+                <a href="/admin/feedbacks/edit/<%= feedback._id %>">Edit</a>
+                <a href="/admin/feedbacks/delete/<%= feedback._id %>">Delete</a>
+              </td>
+            </tr>
+          <% }) %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</body>
+</html>

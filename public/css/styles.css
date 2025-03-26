@@ -1,0 +1,2259 @@
+Reset mặc định
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #f8f9fa;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Container chính */
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Header */
+header {
+  background-color: #fff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  padding: 15px 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header .logo {
+  font-size: 24px;
+  font-weight: 700;
+  color: #007bff;
+}
+
+header nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+header nav ul li a {
+  color: #333;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+header nav ul li a:hover {
+  color: #007bff;
+}
+
+/* Hero Section (Home Page) */
+.hero {
+  background-color: #e9f1ff;
+  padding: 100px 0;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 48px;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 40px;
+}
+
+.hero .button-group {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+/* Button chung */
+.btn {
+  background-color: #007bff;
+  color: #fff;
+  padding: 12px 30px;
+  text-decoration: none;
+  border-radius: 25px;
+  font-size: 16px;
+  font-weight: 600;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.btn:hover {
+  background-color: #0056b3;
+  transform: translateY(-3px);
+}
+
+/* Newsletter Section */
+.newsletter {
+  background-color: #fff;
+  padding: 40px 0;
+  text-align: center;
+  border-top: 1px solid #e0e0e0;
+}
+
+.newsletter h2 {
+  font-size: 24px;
+  font-weight: 700;
+  color: #007bff;
+  margin-bottom: 10px;
+}
+
+.newsletter p {
+  font-size: 16px;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+.newsletter form {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.newsletter input {
+  padding: 10px 20px;
+  border: 1px solid #e0e0e0;
+  border-radius: 25px;
+  font-size: 16px;
+  width: 100%;
+  max-width: 300px;
+}
+
+.newsletter button {
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 30px;
+  border: none;
+  border-radius: 25px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.newsletter button:hover {
+  background-color: #0056b3;
+}
+
+/* Footer */
+footer {
+  background-color: #fff;
+  padding: 40px 0;
+  border-top: 1px solid #e0e0e0;
+}
+
+footer .container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+footer .footer-column {
+  flex: 1;
+  min-width: 200px;
+}
+
+footer .footer-column h3 {
+  font-size: 18px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+footer .footer-column ul {
+  list-style: none;
+}
+
+footer .footer-column ul li {
+  margin-bottom: 10px;
+}
+
+footer .footer-column ul li a {
+  color: #666;
+  text-decoration: none;
+  font-size: 14px;
+  transition: color 0.3s;
+}
+
+footer .footer-column ul li a:hover {
+  color: #007bff;
+}
+
+.footer-bottom {
+  border-top: 1px solid #e0e0e0;
+  padding-top: 20px;
+  margin-top: 20px;
+}
+
+.footer-bottom .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.footer-bottom .language select {
+  padding: 5px;
+  border: 1px solid #e0e0e0;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+.footer-bottom .copyright {
+  font-size: 14px;
+  color: #666;
+}
+
+/* Form chung */
+.form-container {
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  max-width: 500px;
+  margin: 40px auto;
+}
+
+.form-container h2 {
+  font-size: 28px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.form-container label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: 500;
+  color: #333;
+}
+
+.form-container input,
+.form-container select,
+.form-container textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #e0e0e0;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.form-container button {
+  background-color: #007bff;
+  color: #fff;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 25px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  width: 100%;
+  transition: background-color 0.3s;
+}
+
+.form-container button:hover {
+  background-color: #0056b3;
+}
+
+.form-container .error {
+  color: #dc3545;
+  text-align: center;
+  margin-bottom: 15px;
+  font-size: 14px;
+}
+
+/* Card (dùng cho danh sách bác sĩ, thuốc, tin tức, v.v.) */
+.card {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  transition: transform 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card h3 {
+  font-size: 20px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.card p {
+  font-size: 16px;
+  color: #666;
+}
+
+/* Grid (dùng cho danh sách bác sĩ, thuốc, tin tức) */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  header .container {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  header nav ul {
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+  }
+
+  .hero h1 {
+    font-size: 32px;
+  }
+
+  .hero .button-group {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .newsletter form {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .newsletter input {
+    max-width: 100%;
+  }
+
+  footer .container {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .footer-bottom .container {
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+  }
+}
+/* Header Enhancements */
+header nav ul {
+  list-style: none;
+  display: flex;
+  gap: 25px; /* Increased gap for more spacing between buttons */
+  align-items: center; /* Vertically center the nav items */
+}
+
+header nav ul li {
+  position: relative; /* For potential hover effects */
+}
+
+header nav ul li a {
+  color: #333;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 500;
+  padding: 8px 16px; /* Consistent padding for button-like feel */
+  border-radius: 20px; /* Rounded edges for a button look */
+  transition: all 0.3s ease; /* Smooth transition for hover effects */
+}
+
+/* Styling for nav links as buttons */
+header nav ul li a:hover {
+  color: #fff; /* White text on hover */
+  background-color: #007bff; /* Primary color background */
+  transform: translateY(-2px); /* Slight lift effect */
+}
+
+/* Specific styling for logged-in vs logged-out states */
+header nav ul li a[href="/login"],
+header nav ul li a[href="/register"] {
+  background-color: #007bff; /* Default button style for login/register */
+  color: #fff;
+  padding: 8px 20px; /* Slightly wider for emphasis */
+}
+
+header nav ul li a[href="/login"]:hover,
+header nav ul li a[href="/register"]:hover {
+  background-color: #0056b3; /* Darker shade on hover */
+}
+
+/* Logout button styling */
+header nav ul li a[href="/logout"] {
+  background-color: #dc3545; /* Red for logout to stand out */
+  color: #fff;
+  padding: 8px 20px;
+}
+
+header nav ul li a[href="/logout"]:hover {
+  background-color: #b02a37; /* Darker red on hover */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  header nav ul {
+    gap: 15px; /* Reduced gap on mobile for better fit */
+  }
+
+  header nav ul li a {
+    padding: 6px 12px; /* Smaller padding on mobile */
+    font-size: 14px; /* Slightly smaller text */
+  }
+
+  header nav ul li a[href="/login"],
+  header nav ul li a[href="/register"],
+  header nav ul li a[href="/logout"] {
+    padding: 6px 15px; /* Adjusted padding for mobile */
+  }
+}
+/* Header Enhancements */
+header {
+  background-color: #fff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  padding: 15px 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 95%; /* Slightly wider container for more space */
+  max-width: 1400px; /* Increased max-width for larger screens */
+}
+
+header nav {
+  flex-grow: 1; /* Allows nav to take up more space */
+  display: flex;
+  justify-content: flex-end; /* Aligns nav to the right */
+}
+
+header nav ul {
+  list-style: none;
+  display: flex;
+  gap: 30px; /* Increased gap for better separation */
+  align-items: center;
+  flex-wrap: wrap; /* Allows wrapping if needed on smaller screens */
+  padding: 0 10px; /* Adds padding to avoid edge crowding */
+}
+
+header nav ul li {
+  position: relative;
+}
+
+header nav ul li a {
+  color: #333;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 500;
+  padding: 10px 20px; /* Increased padding for larger buttons */
+  border-radius: 25px; /* Slightly larger radius for a smoother look */
+  transition: all 0.3s ease;
+  display: inline-block; /* Ensures proper sizing */
+}
+
+/* Styling for nav links as buttons */
+header nav ul li a:hover {
+  color: #fff;
+  background-color: #007bff;
+  transform: translateY(-2px);
+}
+
+/* Specific styling for logged-in vs logged-out states */
+header nav ul li a[href="/login"],
+header nav ul li a[href="/register"] {
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 25px; /* Wider padding for prominence */
+}
+
+header nav ul li a[href="/login"]:hover,
+header nav ul li a[href="/register"]:hover {
+  background-color: #0056b3;
+}
+
+/* Logout button styling */
+header nav ul li a[href="/logout"] {
+  background-color: #dc3545;
+  color: #fff;
+  padding: 10px 25px;
+}
+
+header nav ul li a[href="/logout"]:hover {
+  background-color: #b02a37;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  header .container {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  header nav {
+    width: 100%; /* Full width on mobile */
+    justify-content: center; /* Center nav items on mobile */
+  }
+
+  header nav ul {
+    gap: 20px; /* Adjusted gap for mobile */
+    justify-content: center; /* Center items horizontally */
+  }
+
+  header nav ul li a {
+    padding: 8px 15px; /* Slightly smaller padding on mobile */
+    font-size: 14px;
+  }
+
+  header nav ul li a[href="/login"],
+  header nav ul li a[href="/register"],
+  header nav ul li a[href="/logout"] {
+    padding: 8px 20px;
+  }
+}/* Header Enhancements */
+header {
+  background-color: #fff;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05); /* Softer shadow for elegance */
+  padding: 20px 0; /* Increased padding for a taller header */
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 95%;
+  max-width: 1400px;
+}
+
+header .logo {
+  font-size: 28px; /* Slightly larger logo for prominence */
+  font-weight: 700;
+  color: #007bff;
+  letter-spacing: 1px; /* Artistic touch */
+}
+
+header nav {
+  flex-grow: 1;
+  display: flex;
+  justify-content: flex-end;
+}
+
+header nav ul {
+  list-style: none;
+  display: flex;
+  gap: 35px; /* Wider gap for a luxurious feel */
+  align-items: center;
+  padding: 0 15px; /* Extra padding for balance */
+}
+
+header nav ul li {
+  position: relative;
+}
+
+header nav ul li a {
+  color: #333;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 600; /* Bolder text for sophistication */
+  padding: 10px 22px; /* Larger padding for bigger buttons */
+  border-radius: 30px; /* Softer, more artistic radius */
+  transition: all 0.4s ease; /* Smoother transition */
+  display: inline-block;
+  position: relative;
+  overflow: hidden; /* For artistic hover effect */
+}
+
+/* Artistic hover effect with gradient */
+header nav ul li a::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: radial-gradient(circle, rgba(0, 123, 255, 0.8), transparent);
+  transition: all 0.4s ease;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+}
+
+header nav ul li a:hover::after {
+  width: 200%;
+  height: 200%;
+}
+
+header nav ul li a:hover {
+  color: #fff;
+  background-color: #007bff;
+  box-shadow: 0 4px 15px rgba(0, 123, 255, 0.3); /* Subtle glow */
+  transform: scale(1.05); /* Slight scale for elegance */
+}
+
+/* Specific styling for logged-in vs logged-out states */
+header nav ul li a[href="/login"],
+header nav ul li a[href="/register"] {
+  background: linear-gradient(135deg, #007bff, #00c4cc); /* Gradient for artistic flair */
+  color: #fff;
+  padding: 10px 25px;
+  box-shadow: 0 2px 10px rgba(0, 123, 255, 0.2);
+}
+
+header nav ul li a[href="/login"]:hover,
+header nav ul li a[href="/register"]:hover {
+  background: linear-gradient(135deg, #0056b3, #009b9f);
+  transform: scale(1.05);
+}
+
+/* Logout button styling */
+header nav ul li a[href="/logout"] {
+  background: linear-gradient(135deg, #dc3545, #ff6b6b); /* Gradient for artistic logout */
+  color: #fff;
+  padding: 10px 25px;
+  box-shadow: 0 2px 10px rgba(220, 53, 69, 0.2);
+}
+
+header nav ul li a[href="/logout"]:hover {
+  background: linear-gradient(135deg, #b02a37, #e04f5f);
+  transform: scale(1.05);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  header {
+    padding: 15px 0; /* Slightly reduced padding on mobile */
+  }
+
+  header .container {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  header nav {
+    width: 100%;
+    justify-content: center;
+  }
+
+  header nav ul {
+    gap: 25px; /* Adjusted for mobile elegance */
+    justify-content: center;
+    flex-wrap: wrap; /* Allows wrapping for better arrangement */
+  }
+
+  header nav ul li a {
+    padding: 8px 18px; /* Slightly smaller but still prominent */
+    font-size: 14px;
+  }
+
+  header nav ul li a[href="/login"],
+  header nav ul li a[href="/register"],
+  header nav ul li a[href="/logout"] {
+    padding: 8px 20px;
+  }
+}
+/* Reset mặc định */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #f8f9fa;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Container chính */
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Header */
+header {
+  background-color: #fff;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06); /* Soft shadow for depth */
+  padding: 20px 0; /* Increased padding for a taller header */
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 95%; /* Wider container */
+  max-width: 1400px; /* Larger max-width */
+}
+
+header .logo {
+  font-size: 28px; /* Bold and prominent */
+  font-weight: 700;
+  color: #007bff;
+  letter-spacing: 1.2px; /* Subtle spacing for elegance */
+  text-transform: uppercase; /* Adds a modern touch */
+}
+
+header nav {
+  flex-grow: 1;
+  display: flex;
+  justify-content: flex-end;
+}
+
+header nav ul {
+  list-style: none;
+  display: flex;
+  gap: 30px; /* Balanced spacing */
+  align-items: center;
+  padding: 0 10px;
+  flex-wrap: wrap; /* Allows wrapping */
+}
+
+header nav ul li {
+  position: relative;
+}
+
+header nav ul li a {
+  color: #333;
+  text-decoration: none;
+  font-size: 14px; /* Smaller, refined text */
+  font-weight: 600;
+  padding: 8px 20px; /* Comfortable button size */
+  border-radius: 25px; /* Smooth, modern radius */
+  transition: all 0.3s ease; /* Smooth transitions */
+  display: flex;
+  align-items: center;
+  gap: 6px; /* Space for icons if used */
+  position: relative;
+}
+
+/* Gray underline effect */
+header nav ul li a::after {
+  content: '';
+  position: absolute;
+  bottom: 2px; /* Slightly above bottom edge */
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background-color: #d3d3d3; /* Light gray for subtlety */
+  transition: width 0.3s ease, left 0.3s ease;
+  transform: translateX(-50%);
+}
+
+header nav ul li a:hover::after {
+  width: 70%; /* Expands underline on hover */
+}
+
+/* Hover effect */
+header nav ul li a:hover {
+  color: #007bff;
+  background-color: #f0f6ff; /* Light blue background on hover */
+  transform: translateY(-2px); /* Slight lift */
+}
+
+/* Specific styling for logged-in vs logged-out states */
+header nav ul li a[href="/login"],
+header nav ul li a[href="/register"] {
+  background-color: #007bff;
+  color: #fff;
+  padding: 8px 22px;
+  border-radius: 25px;
+  box-shadow: 0 2px 8px rgba(0, 123, 255, 0.2);
+}
+
+header nav ul li a[href="/login"]:hover,
+header nav ul li a[href="/register"]:hover {
+  background-color: #0056b3;
+  transform: translateY(-2px);
+}
+
+/* Logout button styling */
+header nav ul li a[href="/logout"] {
+  background-color: #dc3545;
+  color: #fff;
+  padding: 8px 22px;
+  border-radius: 25px;
+  box-shadow: 0 2px 8px rgba(220, 53, 69, 0.2);
+}
+
+header nav ul li a[href="/logout"]:hover {
+  background-color: #b02a37;
+  transform: translateY(-2px);
+}
+
+/* Responsive adjustments with staggered centering */
+@media (max-width: 768px) {
+  header {
+    padding: 15px 0;
+  }
+
+  header .container {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  header nav {
+    width: 100%;
+    justify-content: center;
+  }
+
+  header nav ul {
+    gap: 20px;
+    justify-content: center; /* Centers wrapped rows */
+    flex-wrap: wrap;
+  }
+
+  header nav ul li {
+    flex: 0 0 auto;
+  }
+
+  /* Staggered indent for wrapped rows */
+  header nav ul li:nth-child(n + 5) { /* Adjust based on items per row */
+    margin-left: 15px; /* Slight indent for wrapped rows */
+  }
+
+  header nav ul li a {
+    padding: 6px 16px;
+    font-size: 12px; /* Smaller text on mobile */
+  }
+
+  header nav ul li a[href="/login"],
+  header nav ul li a[href="/register"],
+  header nav ul li a[href="/logout"] {
+    padding: 6px 18px;
+  }
+}
+
+/* Rest of your CSS remains unchanged below */
+.hero {
+  background-color: #e9f1ff;
+  padding: 100px 0;
+  text-align: center;
+}
+
+/* ... (all other sections like .hero, .newsletter, .footer, etc., remain as is) ... */
+/* General Body Styling */
+body {
+  font-family: 'Roboto', sans-serif; /* Matches your Google Fonts link */
+  background-color: #f8f9fa;
+  color: #333;
+  line-height: 1.6;
+  overflow-x: hidden; /* Prevents horizontal scroll */
+}
+
+/* Container */
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Hero Section */
+.hero {
+  background: linear-gradient(135deg, #007bff, #00c4cc); /* Vibrant gradient */
+  padding: 120px 0; /* Taller for impact */
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  color: #fff;
+  box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.1); /* Inner shadow for depth */
+}
+
+/* Decorative background element */
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.2), transparent);
+  opacity: 0.5;
+  animation: rotate 20s linear infinite; /* Subtle rotation */
+}
+
+@keyframes rotate {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.hero h1 {
+  font-size: 3.5rem; /* Larger for emphasis */
+  font-weight: 700;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+  animation: fadeInDown 1s ease-out; /* Entrance animation */
+}
+
+.hero p {
+  font-size: 1.3rem;
+  margin-bottom: 30px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  animation: fadeInUp 1s ease-out 0.3s backwards; /* Delayed animation */
+}
+
+.hero .btn {
+  background-color: #fff;
+  color: #007bff;
+  padding: 14px 35px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  border-radius: 30px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  animation: fadeInUp 1s ease-out 0.6s backwards;
+}
+
+.hero .btn:hover {
+  background-color: #007bff;
+  color: #fff;
+  transform: translateY(-5px);
+  box-shadow: 0 6px 20px rgba(0, 123, 255, 0.4);
+}
+
+/* Animations */
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Services Section */
+.container h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #007bff;
+  text-align: center;
+  margin: 50px 0 30px;
+  position: relative;
+}
+
+.container h2::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  width: 60px;
+  height: 4px;
+  background-color: #00c4cc;
+  transform: translateX(-50%);
+  border-radius: 2px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+  margin-top: 20px;
+}
+
+.card {
+  background: #fff;
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Decorative card hover effect */
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(120deg, rgba(0, 123, 255, 0.1), transparent);
+  transition: left 0.4s ease;
+}
+
+.card:hover::before {
+  left: 100%;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.card h3 {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.card p {
+  font-size: 1rem;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+.card .btn {
+  background-color: #00c4cc;
+  color: #fff;
+  padding: 10px 25px;
+  font-size: 1rem;
+  border-radius: 25px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.card .btn:hover {
+  background-color: #007bff;
+  transform: translateY(-3px);
+  box-shadow: 0 4px 15px rgba(0, 123, 255, 0.3);
+}
+
+/* Additional Content: News Section */
+.news-section {
+  margin: 60px 0;
+}
+
+.news-section h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #007bff;
+  text-align: center;
+  margin-bottom: 40px;
+  position: relative;
+}
+
+.news-section h2::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  width: 60px;
+  height: 4px;
+  background-color: #00c4cc;
+  transform: translateX(-50%);
+  border-radius: 2px;
+}
+
+.news-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 25px;
+}
+
+.news-card {
+  background: #fff;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.news-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.news-card h3 {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #007bff;
+  margin-bottom: 10px;
+}
+
+.news-card p {
+  font-size: 1rem;
+  color: #666;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .hero {
+    padding: 80px 0;
+  }
+
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+
+  .hero p {
+    font-size: 1.1rem;
+  }
+
+  .hero .btn {
+    padding: 12px 30px;
+    font-size: 1rem;
+  }
+
+  .container h2,
+  .news-section h2 {
+    font-size: 2rem;
+  }
+
+  .card h3 {
+    font-size: 1.4rem;
+  }
+
+  .card p {
+    font-size: 0.9rem;
+  }
+
+  .news-card h3 {
+    font-size: 1.2rem;
+  }
+}
+/* Reset và định dạng chung */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #f4f7fa;
+  color: #333;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Tiêu đề */
+h2 {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 2rem;
+  color: #2c3e50;
+}
+
+/* Form tìm kiếm */
+.search-form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  margin-bottom: 40px;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-width: 250px;
+}
+
+.input-group label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #2c3e50;
+  margin-bottom: 5px;
+}
+
+.search-input {
+  padding: 10px 15px;
+  font-size: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  outline: none;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.search-input:focus {
+  border-color: #3498db;
+  box-shadow: 0 0 5px rgba(52, 152, 219, 0.3);
+}
+
+.search-button {
+  padding: 10px 30px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #fff;
+  background-color: #3498db;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.1s ease;
+  align-self: flex-end;
+}
+
+.search-button:hover {
+  background-color: #2980b9;
+}
+
+.search-button:active {
+  transform: scale(0.98);
+}
+
+/* Lưới hiển thị bệnh */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+/* Thẻ bệnh */
+.card {
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+.disease-image {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 15px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  border: 2px solid #ddd;
+  transition: transform 0.3s ease;
+}
+
+.disease-image:hover {
+  transform: scale(1.1);
+}
+
+.card h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #2c3e50;
+  margin-bottom: 10px;
+}
+
+.card p {
+  font-size: 0.9rem;
+  color: #7f8c8d;
+  margin-bottom: 5px;
+}
+
+/* Thông báo lỗi */
+.error {
+  text-align: center;
+  color: #e74c3c;
+  font-size: 0.9rem;
+  margin-bottom: 20px;
+}
+
+/* Thông báo không tìm thấy */
+.grid p {
+  text-align: center;
+  font-size: 1rem;
+  color: #7f8c8d;
+  margin-top: 20px;
+}
+/* Reset và định dạng chung */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #f4f7fa;
+  color: #333;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Tiêu đề */
+h2 {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 2rem;
+  color: #2c3e50;
+}
+
+/* Nút Xem lợi ích */
+.button-container {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.benefits-button {
+  padding: 10px 30px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #fff;
+  background-color: #2ecc71; /* Màu xanh lá để nổi bật */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.1s ease;
+}
+
+.benefits-button:hover {
+  background-color: #27ae60; /* Màu xanh lá đậm hơn khi hover */
+}
+
+.benefits-button:active {
+  transform: scale(0.98);
+}
+
+/* Modal */
+.modal {
+  display: none; /* Ẩn modal mặc định */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Nền mờ */
+  z-index: 1000;
+  overflow: auto;
+}
+
+.modal-content {
+  background-color: #fff;
+  margin: 5% auto;
+  padding: 20px;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 600px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  position: relative;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.close {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 1.5rem;
+  color: #7f8c8d;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.close:hover {
+  color: #e74c3c; /* Màu đỏ khi hover */
+}
+
+.modal-content h3 {
+  font-size: 1.5rem;
+  color: #2c3e50;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.benefits-list {
+  list-style: none;
+  padding: 0;
+}
+
+.benefits-list li {
+  font-size: 1rem;
+  color: #333;
+  margin-bottom: 15px;
+  padding-left: 25px;
+  position: relative;
+}
+
+.benefits-list li::before {
+  content: '✔';
+  position: absolute;
+  left: 0;
+  color: #2ecc71; /* Màu xanh lá cho dấu check */
+  font-size: 1.2rem;
+}
+
+/* Lưới hiển thị bảo hiểm */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+/* Thẻ bảo hiểm */
+.card {
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+.card h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #2c3e50;
+  margin-bottom: 10px;
+}
+
+.card p {
+  font-size: 0.9rem;
+  color: #7f8c8d;
+  margin-bottom: 5px;
+}
+
+/* Thông báo lỗi */
+.error {
+  text-align: center;
+  color: #e74c3c;
+  font-size: 0.9rem;
+  margin-bottom: 20px;
+}
+
+/* Thông báo không tìm thấy */
+.grid p {
+  text-align: center;
+  font-size: 1rem;
+  color: #7f8c8d;
+  margin-top: 20px;
+}
+
+.grid p a {
+  color: #3498db;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.grid p a:hover {
+  text-decoration: underline;
+}
+
+/* Hiệu ứng fade-in cho modal */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+/* Reset và định dạng chung */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #f4f7fa;
+  color: #333;
+}
+
+.form-container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Tiêu đề */
+h2 {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 2rem;
+  color: #2c3e50;
+}
+
+/* Form tính BMI */
+form {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+form label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #2c3e50;
+}
+
+form input {
+  padding: 10px 15px;
+  font-size: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  outline: none;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+form input:focus {
+  border-color: #3498db;
+  box-shadow: 0 0 5px rgba(52, 152, 219, 0.3);
+}
+
+form button {
+  padding: 10px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #fff;
+  background-color: #3498db;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.1s ease;
+}
+
+form button:hover {
+  background-color: #2980b9;
+}
+
+form button:active {
+  transform: scale(0.98);
+}
+
+/* Nút Xem phân loại BMI */
+.button-container {
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 40px;
+}
+
+.bmi-button {
+  padding: 10px 30px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #fff;
+  background-color: #f39c12; /* Màu cam để nổi bật */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.1s ease;
+}
+
+.bmi-button:hover {
+  background-color: #e67e22; /* Màu cam đậm hơn khi hover */
+}
+
+.bmi-button:active {
+  transform: scale(0.98);
+}
+
+/* Modal */
+.modal {
+  display: none; /* Ẩn modal mặc định */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Nền mờ */
+  z-index: 1000;
+  overflow: auto;
+}
+
+.modal-content {
+  background-color: #fff;
+  margin: 5% auto;
+  padding: 20px;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 700px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  position: relative;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.close {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 1.5rem;
+  color: #7f8c8d;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.close:hover {
+  color: #e74c3c; /* Màu đỏ khi hover */
+}
+
+.modal-content h3 {
+  font-size: 1.5rem;
+  color: #2c3e50;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* Bảng phân loại BMI */
+.bmi-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+.bmi-table th,
+.bmi-table td {
+  padding: 10px;
+  font-size: 0.9rem;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.bmi-table th {
+  background-color: #f4f7fa;
+  font-weight: 600;
+  color: #2c3e50;
+}
+
+.bmi-table td {
+  color: #333;
+}
+
+.bmi-table tr:hover {
+  background-color: #f9f9f9;
+}
+
+/* Thẻ kết quả BMI */
+.card {
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.card h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #2c3e50;
+}
+
+/* Thông báo lỗi */
+.error {
+  text-align: center;
+  color: #e74c3c;
+  font-size: 0.9rem;
+  margin-bottom: 20px;
+}
+
+/* Hiệu ứng fade-in cho modal */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+/* Admin Form Headings */
+.admin-form h3 {
+  font-size: 18px;
+  color: #333;
+  margin: 20px 0 10px;
+  border-bottom: 1px solid #e9ecef;
+  padding-bottom: 5px;
+}
+
+/* Form Group */
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: 500;
+  color: #555;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 14px;
+  transition: border-color 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+.admin-form button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+}
+
+.admin-form button:hover {
+  background-color: #0056b3;
+}
+/* User Actions Section */
+.user-actions {
+  margin: 30px 0;
+  text-align: center;
+}
+
+.user-actions h3 {
+  font-size: 20px;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.action-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.action-btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #28a745;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+}
+
+.action-btn:hover {
+  background-color: #218838;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .action-buttons {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .action-btn {
+    width: 100%;
+    text-align: center;
+  }
+}
+/* Order History Page */
+.order-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.order-card {
+  background-color: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease;
+}
+
+.order-card:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.order-header h3 {
+  font-size: 18px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.order-header p {
+  margin: 5px 0;
+  color: #555;
+}
+
+.order-header p strong {
+  color: #333;
+}
+
+.order-items {
+  margin-top: 15px;
+}
+
+.order-items h4 {
+  font-size: 16px;
+  color: #333;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #e0e0e0;
+  padding-bottom: 5px;
+}
+
+.items-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+.items-table th,
+.items-table td {
+  padding: 10px;
+  text-align: left;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.items-table th {
+  background-color: #f8f9fa;
+  font-weight: 600;
+  color: #333;
+}
+
+.items-table td {
+  color: #555;
+}
+
+.items-table tr:last-child td {
+  border-bottom: none;
+}
+
+.items-table tr:hover {
+  background-color: #f9f9f9;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .order-card {
+    padding: 15px;
+  }
+
+  .order-header h3 {
+    font-size: 16px;
+  }
+
+  .order-items h4 {
+    font-size: 14px;
+  }
+
+  .items-table th,
+  .items-table td {
+    padding: 8px;
+    font-size: 14px;
+  }
+
+  .items-table {
+    font-size: 14px;
+  }
+}
+/* Doctor Appointments Page */
+.appointment-list {
+  margin-top: 20px;
+}
+
+.appointment-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.appointment-table th,
+.appointment-table td {
+  padding: 12px 15px;
+  text-align: left;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.appointment-table th {
+  background-color: #f8f9fa;
+  font-weight: 600;
+  color: #333;
+}
+
+.appointment-table td {
+  color: #555;
+}
+
+.appointment-table tr:last-child td {
+  border-bottom: none;
+}
+
+.appointment-table tr:hover {
+  background-color: #f9f9f9;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .appointment-table th,
+  .appointment-table td {
+    padding: 8px 10px;
+    font-size: 14px;
+  }
+
+  .appointment-table {
+    font-size: 14px;
+  }
+}
+/* Success and Error Messages */
+.success {
+  color: #28a745;
+  background-color: #e6f4ea;
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 15px;
+}
+
+.error {
+  color: #dc3545;
+  background-color: #f8d7da;
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 15px;
+}
+
+/* Action Buttons */
+.action-btn {
+  padding: 6px 12px;
+  border: none;
+  border-radius: 4px;
+  color: white;
+  font-size: 14px;
+  cursor: pointer;
+  margin-right: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.create-record-btn {
+  background-color: #007bff;
+}
+
+.create-record-btn:hover {
+  background-color: #0056b3;
+}
+
+.create-prescription-btn {
+  background-color: #28a745;
+}
+
+.create-prescription-btn:hover {
+  background-color: #218838;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .action-btn {
+    padding: 5px 10px;
+    font-size: 12px;
+  }
+}
+/* Success and Error Messages */
+.success {
+  color: #28a745;
+  background-color: #e6f4ea;
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 15px;
+}
+
+.error {
+  color: #dc3545;
+  background-color: #f8d7da;
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 15px;
+}
+
+/* Action Buttons */
+.action-btn {
+  padding: 6px 12px;
+  border: none;
+  border-radius: 4px;
+  color: white;
+  font-size: 14px;
+  cursor: pointer;
+  margin-right: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.create-record-btn {
+  background-color: #007bff;
+}
+
+.create-record-btn:hover {
+  background-color: #0056b3;
+}
+
+.create-prescription-btn {
+  background-color: #28a745;
+}
+
+.create-prescription-btn:hover {
+  background-color: #218838;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .action-btn {
+    padding: 5px 10px;
+    font-size: 12px;
+  }
+}
+/* Modal Styles */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  overflow: auto;
+}
+
+.modal-content {
+  background-color: #fff;
+  margin: 10% auto;
+  padding: 20px;
+  border-radius: 8px;
+  width: 90%;
+  max-width: 500px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  position: relative;
+}
+
+.close {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  color: #aaa;
+  font-size: 24px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.close:hover {
+  color: #000;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 5px;
+  color: #333;
+}
+
+.form-group textarea,
+.form-group select {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 14px;
+  box-sizing: border-box;
+}
+
+.form-group textarea {
+  resize: vertical;
+}
+
+.form-group select {
+  height: 40px;
+}
+
+/* Action Buttons */
+.action-btn {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  color: white;
+  font-size: 14px;
+  cursor: pointer;
+  margin-right: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.create-record-btn {
+  background-color: #007bff;
+}
+
+.create-record-btn:hover {
+  background-color: #0056b3;
+}
+
+.create-prescription-btn {
+  background-color: #28a745;
+}
+
+.create-prescription-btn:hover {
+  background-color: #218838;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .modal-content {
+    width: 95%;
+    margin: 20% auto;
+  }
+
+  .action-btn {
+    padding: 6px 12px;
+    font-size: 12px;
+  }
+}
+/* Medicine List */
+.medicine-list {
+  max-height: 150px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 10px;
+}
+
+.medicine-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.medicine-item input[type="checkbox"] {
+  margin-right: 8px;
+}
+
+.medicine-item label {
+  font-size: 14px;
+  color: #333;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .medicine-list {
+    max-height: 120px;
+  }
+
+  .medicine-item label {
+    font-size: 12px;
+  }
+}
+/* General Table Styles */
+.record-list,
+.prescription-list {
+  margin-top: 20px;
+}
+
+.record-table,
+.prescription-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.record-table th,
+.record-table td,
+.prescription-table th,
+.prescription-table td {
+  padding: 12px 15px;
+  text-align: left;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.record-table th,
+.prescription-table th {
+  background-color: #f8f9fa;
+  font-weight: 600;
+  color: #333;
+}
+
+.record-table td,
+.prescription-table td {
+  color: #555;
+}
+
+.record-table tr:last-child td,
+.prescription-table tr:last-child td {
+  border-bottom: none;
+}
+
+.record-table tr:hover,
+.prescription-table tr:hover {
+  background-color: #f9f9f9;
+}
+
+/* Error Message */
+.error {
+  color: #dc3545;
+  background-color: #f8d7da;
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 15px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .record-table th,
+  .record-table td,
+  .prescription-table th,
+  .prescription-table td {
+    padding: 8px 10px;
+    font-size: 14px;
+  }
+
+  .record-table,
+  .prescription-table {
+    font-size: 14px;
+  }
+}

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HealthHub - Add News</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+  <%- include('partials/header') %>
+
+  <div class="container">
+    <h2>Thêm Tin tức</h2>
+    <% if (error) { %>
+      <p class="error"><%= error %></p>
+    <% } %>
+
+    <form action="/admin/news/add" method="POST">
+      <div class="form-group">
+        <label for="title">Tiêu đề:</label>
+        <input type="text" id="title" name="title" required>
+      </div>
+      <div class="form-group">
+        <label for="content">Nội dung:</label>
+        <textarea id="content" name="content" rows="5" required></textarea>
+      </div>
+      <div class="form-group">
+        <label for="category">Danh mục:</label>
+        <select id="category" name="category" required>
+          <option value="health_news">Health News</option>
+          <option value="health_threats">Health Threats</option>
+          <option value="community_programs">Community Programs</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="priority">Ưu tiên (số càng lớn càng ưu tiên):</label>
+        <input type="number" id="priority" name="priority" value="0">
+      </div>
+      <button type="submit" class="action-button">Thêm Tin tức</button>
+    </form>
+  </div>
+
+  <%- include('partials/footer') %>
+</body>
+</html>

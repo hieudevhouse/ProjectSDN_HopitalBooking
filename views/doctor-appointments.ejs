@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HealthCare - Doctor Appointments</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+  <%- include('partials/header') %>
+
+  <div class="container">
+    <h2>Cuộc hẹn của Bác sĩ: <%= user.name %></h2>
+    <% if (error) { %>
+      <p class="error"><%= error %></p>
+    <% } %>
+    <% if (success) { %>
+      <p class="success"><%= success %></p>
+    <% } %>
+    <% if (appointments.length === 0) { %>
+      <p>Không tìm thấy lịch hẹn.</p>
+    <% } else { %>
+      <div class="appointment-list">
+        <table class="appointment-table">
+          <thead>
+            <tr>
+              <th>Tên Bác Sĩ</th>
+              <th>Tên Bệnh Nhân</th>
+              <th>Vấn Đề Sức Khỏe</th>
+              <th>Ngày Đặt Lịch</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% appointments.forEach(appointment => { %>
+              <tr>
+                <td><%= appointment.doctor_id.user_id.name %></td>
+                <td><%= appointment.patient_id.user_id.name %></td>
+                <td><%= appointment.health_issue || 'Không được chỉ định' %></td>
+                <td><%= appointment.date_time.toISOString().split('T')[0] %> <%= appointment.date_time.toISOString().split('T')[1].split('.')[0] %></td>
+                <td>
+                  <button class="action-btn create-record-btn" onclick="openMedicalRecordModal('<%= appointment._id %>')">Tạo Bệnh Án</button>
+                </td>
+              </tr>
+            <% }) %>
+          </tbody>
+        </table>
+      </div>
+    <% } %>
+  </div>
+
+  <!-- Modal Tạo Bệnh Án -->
+  <div id="medicalRecordModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeMedicalRecordModal()">×</span>
+      <h3>Tạo Bệnh Án</h3>
+      <form id="medicalRecordForm" action="/create-medical-record" method="POST">
+        <input type="hidden" name="appointment_id" id="medicalRecordAppointmentId">
+        <div class="form-group">
+          <label for="diagnosis">Chẩn đoán:</label>
+          <textarea name="diagnosis" id="diagnosis" rows="4" required placeholder="Nhập chẩn đoán của bác sĩ"></textarea>
+        </div>
+        <div class="form-group">
+          <label for="treatment">Cách điều trị:</label>
+          <textarea name="treatment" id="treatment" rows="4" required placeholder="Nhập cách điều trị"></textarea>
+        </div>
+        <button type="submit" class="action-btn create-record-btn">Lưu Bệnh Án</button>
+        <button type="button" class="action-btn create-prescription-btn" onclick="openPrescriptionModal()">Tạo Đơn Thuốc</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Modal Tạo Đơn Thuốc (Modal con) -->
+  <div id="prescriptionModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closePrescriptionModal()">×</span>
+      <h3>Tạo Đơn Thuốc</h3>
+      <form id="prescriptionForm" action="/create-prescription" method="POST">
+        <input type="hidden" name="appointment_id" id="prescriptionAppointmentId">
+        <div class="form-group">
+          <label for="instructions">Hướng dẫn sử dụng:</label>
+          <textarea name="instructions" id="instructions" rows="4" required placeholder="Nhập hướng dẫn sử dụng đơn thuốc"></textarea>
+        </div>
+        <div class="form-group">
+          <label>Chọn thuốc:</label>
+          <div id="medicineList" class="medicine-list">
+            <!-- Danh sách thuốc sẽ được load động từ server -->
+          </div>
+        </div>
+        <button type="submit" class="action-btn create-prescription-btn">Lưu Đơn Thuốc</button>
+      </form>
+    </div>
+  </div>
+
+  <%- include('partials/footer') %>
+
+  <!-- JavaScript để xử lý modal -->
+  <script>
+    // Mở modal Tạo Bệnh Án
+    function openMedicalRecordModal(appointmentId) {
+      document.getElementById('medicalRecordModal').style.display = 'block';
+      document.getElementById('medicalRecordAppointmentId').value = appointmentId;
+      document.getElementById('prescriptionAppointmentId').value = appointmentId;
+    }
+
+    // Đóng modal Tạo Bệnh Án
+    function closeMedicalRecordModal() {
+      document.getElementById('medicalRecordModal').style.display = 'none';
+      document.getElementById('medicalRecordForm').reset();
+    }
+
+    // Mở modal Tạo Đơn Thuốc
+    function openPrescriptionModal() {
+      fetch('/get-medicines')
+        .then(response => response.json())
+        .then(data => {
+          const medicineList = document.getElementById('medicineList');
+          medicineList.innerHTML = '';
+          if (data.length === 0) {
+            medicineList.innerHTML = '<p>Không có thuốc nào trong hệ thống.</p>';
+          } else {
+            data.forEach(medicine => {
+              const div = document.createElement('div');
+              div.className = 'medicine-item';
+              div.innerHTML = `
+                <input type="checkbox" name="medicine_ids[]" value="${medicine._id}" id="medicine_${medicine._id}">
+                <label for="medicine_${medicine._id}">${medicine.name}</label>
+              `;
+              medicineList.appendChild(div);
+            });
+          }
+        })
+        .catch(error => {
+          console.error('Error loading medicines:', error);
+          document.getElementById('medicineList').innerHTML = '<p>Lỗi khi tải danh sách thuốc.</p>';
+        });
+
+      document.getElementById('prescriptionModal').style.display = 'block';
+    }
+
+    // Đóng modal Tạo Đơn Thuốc
+    function closePrescriptionModal() {
+      document.getElementById('prescriptionModal').style.display = 'none';
+      document.getElementById('prescriptionForm').reset();
+    }
+
+    // Đóng modal khi nhấn ra ngoài
+    window.onclick = function(event) {
+      if (event.target.classList.contains('modal')) {
+        closeMedicalRecordModal();
+        closePrescriptionModal();
+      }
+    };
+  </script>
+</body>
+</html>

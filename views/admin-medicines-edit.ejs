@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HealthHub - Edit Medicine</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+  <%- include('partials/header') %>
+
+  <div class="container">
+    <h2>Sửa Thuốc</h2>
+    <% if (error) { %>
+      <p class="error"><%= error %></p>
+    <% } %>
+
+    <form action="/admin/medicines/edit/<%= medicine._id %>" method="POST">
+      <div class="form-group">
+        <label for="name">Tên thuốc:</label>
+        <input type="text" id="name" name="name" value="<%= medicine.name %>" required>
+      </div>
+      <div class="form-group">
+        <label for="type">Loại thuốc:</label>
+        <input type="text" id="type" name="type" value="<%= medicine.type %>" required>
+      </div>
+      <div class="form-group">
+        <label for="illness">Bệnh điều trị:</label>
+        <input type="text" id="illness" name="illness" value="<%= medicine.illness %>">
+      </div>
+      <div class="form-group">
+        <label for="price">Giá (VNĐ):</label>
+        <input type="number" id="price" name="price" value="<%= medicine.price %>" required>
+      </div>
+      <div class="form-group">
+        <label for="stock">Số lượng tồn kho:</label>
+        <input type="number" id="stock" name="stock" value="<%= medicine.stock %>" required>
+      </div>
+      <div class="form-group">
+        <label for="requires_prescription">Yêu cầu đơn thuốc:</label>
+        <input type="checkbox" id="requires_prescription" name="requires_prescription" <%= medicine.requires_prescription ? 'checked' : '' %>>
+      </div>
+      <button type="submit" class="action-button">Cập nhật</button>
+    </form>
+  </div>
+
+  <%- include('partials/footer') %>
+</body>
+</html>

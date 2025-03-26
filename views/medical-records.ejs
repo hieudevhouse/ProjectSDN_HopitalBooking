@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HealthHub - Medical Records</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+  <%- include('partials/header') %>
+
+  <div class="container">
+    <h2>Bệnh Án</h2>
+    <% if (error) { %>
+      <p class="error"><%= error %></p>
+    <% } %>
+    <% if (records.length === 0) { %>
+      <p>Không tìm thấy bệnh án.</p>
+    <% } else { %>
+      <div class="record-list">
+        <table class="record-table">
+          <thead>
+            <tr>
+              <th>Bệnh Nhân</th>
+              <th>Bác Sĩ</th>
+              <th>Chẩn Đoán</th>
+              <th>Cách Điều Trị</th>
+              <th>Đơn Thuốc</th>
+              <th>Trạng Thái</th>
+              <th>Ngày Tạo</th>
+              <th>Ngày Cập Nhật</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% records.forEach(record => { %>
+              <tr>
+                <td><%= record.patient_id.user_id.name %></td>
+                <td><%= record.doctor_id.user_id.name %></td>
+                <td><%= record.diagnosis %></td>
+                <td><%= record.treatment %></td>
+                <td>
+                  <% if (record.prescription_id) { %>
+                    Đơn thuốc: <%= record.prescription_id.instructions %> <br>
+                    Thuốc: 
+                    <% record.prescription_id.medicine_ids.forEach(medicine => { %>
+                      <%= medicine.name %>,
+                    <% }) %>
+                  <% } else { %>
+                    Không có đơn thuốc
+                  <% } %>
+                </td>
+                <td><%= record.status %></td>
+                <td><%= record.created_at.toISOString().split('T')[0] %> <%= record.created_at.toISOString().split('T')[1].split('.')[0] %></td>
+                <td><%= record.updated_at.toISOString().split('T')[0] %> <%= record.updated_at.toISOString().split('T')[1].split('.')[0] %></td>
+              </tr>
+            <% }) %>
+          </tbody>
+        </table>
+      </div>
+    <% } %>
+  </div>
+
+  <%- include('partials/footer') %>
+</body>
+</html>

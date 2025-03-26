@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HealthHub - Prescriptions</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+  <%- include('partials/header') %>
+
+  <div class="container">
+    <h2>Đơn Thuốc</h2>
+    <% if (error) { %>
+      <p class="error"><%= error %></p>
+    <% } %>
+    <% if (prescriptions.length === 0) { %>
+      <p>Không tìm thấy đơn thuốc.</p>
+    <% } else { %>
+      <div class="prescription-list">
+        <table class="prescription-table">
+          <thead>
+            <tr>
+              <th>Bệnh Nhân</th>
+              <th>Bác Sĩ</th>
+              <th>Thuốc</th>
+              <th>Hướng Dẫn Sử Dụng</th>
+              <th>Số Lần Tái Sử Dụng</th>
+              <th>Trạng Thái</th>
+              <th>Ngày Tạo</th>
+              <th>Ngày Cập Nhật</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% prescriptions.forEach(prescription => { %>
+              <tr>
+                <td><%= prescription.patient_id.user_id.name %></td>
+                <td><%= prescription.doctor_id.user_id.name %></td>
+                <td>
+                  <% if (prescription.medicine_ids && prescription.medicine_ids.length > 0) { %>
+                    <% prescription.medicine_ids.forEach(medicine => { %>
+                      <%= medicine.name %>,
+                    <% }) %>
+                  <% } else { %>
+                    Không có thuốc
+                  <% } %>
+                </td>
+                <td><%= prescription.instructions %></td>
+                <td><%= prescription.refills %></td>
+                <td><%= prescription.status %></td>
+                <td><%= prescription.created_at.toISOString().split('T')[0] %> <%= prescription.created_at.toISOString().split('T')[1].split('.')[0] %></td>
+                <td><%= prescription.updated_at.toISOString().split('T')[0] %> <%= prescription.updated_at.toISOString().split('T')[1].split('.')[0] %></td>
+              </tr>
+            <% }) %>
+          </tbody>
+        </table>
+      </div>
+    <% } %>
+  </div>
+
+  <%- include('partials/footer') %>
+</body>
+</html>

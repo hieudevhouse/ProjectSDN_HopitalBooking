@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HealthHub - Finance</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+  <%- include('partials/header') %>
+
+  <div class="form-container">
+    <h2>Finance - Buy Insurance</h2>
+    <% if (error) { %>
+      <p class="error"><%= error %></p>
+    <% } %>
+    <form action="/finance" method="POST">
+      <label for="plan_id">Select Plan</label>
+      <select id="plan_id" name="plan_id" required>
+        <option value="basic">Basic Plan ($50)</option>
+        <option value="family">Family Plan ($120)</option>
+        <option value="premium">Premium Plan ($200)</option>
+      </select>
+
+      <button type="submit">Buy Now</button>
+    </form>
+  </div>
+
+  <%- include('partials/footer') %>
+</body>
+</html>

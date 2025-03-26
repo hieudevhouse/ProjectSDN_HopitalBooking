@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HealthHub - Home</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/styles.css">
+  <link rel="stylesheet" href="/css/home.css">
+</head>
+<body>
+  <%- include('partials/header') %>
+
+  <section class="hero">
+    <div class="container">
+      <h1>Healthy Care xin chào bạn 🧑‍⚕️</h1>
+      <p>Your trusted partner for healthcare services, offering expert care, reliable information, and convenient solutions.</p>
+      <a href="/find-doctor" class="btn">Find a Doctor</a>
+    </div>
+  </section>
+
+  <div class="container">
+    <h2>Our Services</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>Find a Doctor</h3>
+        <p>Search for top specialists by location, specialty, and availability to book appointments easily.</p>
+        <a href="/find-doctor" class="btn">Explore</a>
+      </div>
+      <div class="card">
+        <h3>Health A-Z</h3>
+        <p>Explore a comprehensive guide to diseases, symptoms, and treatments from A to Z.</p>
+        <a href="/health-a-z" class="btn">Learn More</a>
+      </div>
+      <div class="card">
+        <h3>Buy Medicines</h3>
+        <p>Order prescription and over-the-counter medicines online with fast delivery.</p>
+        <a href="/buy-medicine" class="btn">Shop Now</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="container hospital-section">
+    <h2>About Our Hospital</h2>
+    <div class="info-grid">
+   
+      <div class="info-card">
+        <img src="https://thumbs.dreamstime.com/b/team-doctor-nurse-vision-teamwork-arms-crossed-working-hospital-happy-medical-expert-healthcare-295882590.jpg" alt="Our Doctors">
+        <h3 style="margin-left: 50px;">Expert Medical Team</h3>
+        <p>Our board-certified doctors specialize in various fields, ensuring comprehensive care for all patients.</p>
+      </div>
+     
+      
+    </div>
+  </div>
+
+  <div class="container diseases-section">
+    <h2>Common Diseases</h2>
+    <div class="info-grid">
+      <div class="info-card">
+        <img src="https://img.pikbest.com/wp/202347/table-blood-glucose-levels-3d-render-of-normal-range-and-diabetes-indication_9770419.jpg!w700wp" alt="Diabetes">
+        <h3>Diabetes</h3>
+        <p>A chronic condition affecting blood sugar levels, manageable with diet, exercise, and medication.</p>
+      </div>
+      <div class="info-card">
+        <img src="https://ssbhealthcare.com/wp-content/uploads/2024/08/cardiovascular-disease-cvd-doctor-with-heart-human-model-anatomy-treatment-patient-hospital-1.jpg" alt="Heart Disease">
+        <h3>Heart Disease</h3>
+        <p>Leading cause of death worldwide, preventable with healthy lifestyle choices and regular check-ups.</p>
+      </div>
+      <div class="info-card">
+        <img src="https://d16qt3wv6xm098.cloudfront.net/l-f-CDnrQeCB_Iuzc9AQN7yiS4C_w5GS/_.jpg" alt="Influenza">
+        <h3>Influenza</h3>
+        <p>A contagious respiratory illness; vaccination and hygiene are key to prevention.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="container harmful-foods-section">
+    <h2>Harmful Foods to Avoid</h2>
+    <div class="info-grid">
+      <div class="info-card">
+        <img src="https://www.cancersa.org.au/static/RecentBlog_images_788x452px_Programs_SugaryDrinks-921baee8f11afa6662606b4615e592b3.jpg" alt="Sugary Drinks">
+        <h3>Sugary Drinks</h3>
+        <p>High in empty calories, linked to obesity, diabetes, and heart disease.</p>
+      </div>
+      <div class="info-card">
+        <img src="https://i.dailymail.co.uk/i/pix/2015/10/27/11/2DD63B5C00000578-0-image-a-3_1445944459470.jpg" alt="Processed Meat">
+        <h3>Processed Meats</h3>
+        <p>Contain preservatives and sodium, increasing risks of cancer and hypertension.</p>
+      </div>
+      <div class="info-card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRs_JqHjaWYs0iWwkmxf4_01rpQ6HYCRBkuQQ&s" alt="Fast Food">
+        <h3>Fast Food</h3>
+        <p>Often high in unhealthy fats, salt, and sugar, contributing to chronic health issues.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="container news-section">
+    <h2>Health News & Updates</h2>
+    <div class="news-grid">
+      <div class="news-card">
+        <h3>Breakthrough in Cancer Research</h3>
+        <p>New study reveals promising treatment options for early-stage cancer patients.</p>
+      </div>
+      <div class="news-card">
+        <h3>Flu Season Tips</h3>
+        <p>Stay protected this season with our expert advice on vaccinations and hygiene.</p>
+      </div>
+      <div class="news-card">
+        <h3>Telemedicine Growth</h3>
+        <p>HealthHub expands virtual consultations to improve access to care.</p>
+      </div>
+    </div>
+  </div>
+
+  <%- include('partials/footer') %>
+</body>
+</html>

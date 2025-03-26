@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HealthHub - Edit News</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+  <%- include('partials/header') %>
+
+  <div class="container">
+    <h2>Sửa Tin tức</h2>
+    <% if (error) { %>
+      <p class="error"><%= error %></p>
+    <% } %>
+
+    <form action="/admin/news/edit/<%= news._id %>" method="POST">
+      <div class="form-group">
+        <label for="title">Tiêu đề:</label>
+        <input type="text" id="title" name="title" value="<%= news.title %>" required>
+      </div>
+      <div class="form-group">
+        <label for="content">Nội dung:</label>
+        <textarea id="content" name="content" rows="5" required><%= news.content %></textarea>
+      </div>
+      <div class="form-group">
+        <label for="category">Danh mục:</label>
+        <select id="category" name="category" required>
+          <option value="health_news" <%= news.category === 'health_news' ? 'selected' : '' %>>Health News</option>
+          <option value="health_threats" <%= news.category === 'health_threats' ? 'selected' : '' %>>Health Threats</option>
+          <option value="community_programs" <%= news.category === 'community_programs' ? 'selected' : '' %>>Community Programs</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="priority">Ưu tiên (số càng lớn càng ưu tiên):</label>
+        <input type="number" id="priority" name="priority" value="<%= news.priority %>">
+      </div>
+      <div class="form-group">
+        <label for="status">Trạng thái:</label>
+        <select id="status" name="status" required>
+          <option value="draft" <%= news.status === 'draft' ? 'selected' : '' %>>Draft</option>
+          <option value="published" <%= news.status === 'published' ? 'selected' : '' %>>Published</option>
+        </select>
+      </div>
+      <button type="submit" class="action-button">Cập nhật</button>
+    </form>
+  </div>
+
+  <%- include('partials/footer') %>
+</body>
+</html>

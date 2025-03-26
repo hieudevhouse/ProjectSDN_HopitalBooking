@@ -1,0 +1,36 @@
+<header>
+  <div class="container">
+    <div class="logo"><a href="/">HealthCare</a></div>
+    <nav>
+      <ul>
+        <% if (user) { %>
+          <% if (user.role === 'doctor') { %>
+            <!-- Header cho bác sĩ -->
+            <li><a href="/health-a-z">Sức khỏe A-Z</a></li>
+            <li><a href="/buy-medicine">Mua thuốc</a></li>
+            <li><a href="/doctor-appointments">Nhận lịch khám</a></li> <!-- Thêm mục Nhận lịch khám -->
+            <li><a href="/resources/health-calculator">Máy tính sức khỏe</a></li>
+            <li><a href="/news">Tin tức về y khoa</a></li>
+            <li><a href="/feedback">Phản hồi về hệ thống</a></li>
+            <li><a href="/profile">Hồ sơ</a></li>
+            <li><a href="/logout">Đăng xuất</a></li>
+          <% } else { %>
+            <!-- Header cho các vai trò khác (patient, caregiver, admin) -->
+            <li><a href="/find-doctor">Bác sĩ</a></li>
+            <li><a href="/health-a-z">Sức khỏe A-Z</a></li>
+            <li><a href="/buy-medicine">Mua thuốc</a></li>
+            <li><a href="/resources/insurance-guide">Hướng dẫn mua Bảo Hiểm</a></li>
+            <li><a href="/resources/health-calculator">Máy tính sức khỏe</a></li>
+            <li><a href="/news">Tin tức về y khoa</a></li>
+            <li><a href="/feedback">Phản hồi về hệ thống</a></li>
+            <li><a href="/profile">Hồ sơ</a></li>
+            <li><a href="/logout">Đăng xuất</a></li>
+          <% } %>
+        <% } else { %>
+          <li><a href="/login">Đăng nhập</a></li>
+          <li><a href="/register">Đăng kí</a></li>
+        <% } %>
+      </ul>
+    </nav>
+  </div>
+</header>

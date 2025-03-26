@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HealthHub - Edit Doctor</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+  <%- include('partials/header') %>
+
+  <div class="container">
+    <h2>Sửa Bác sĩ</h2>
+    <% if (error) { %>
+      <p class="error"><%= error %></p>
+    <% } %>
+
+    <form action="/admin/doctors/edit/<%= doctor._id %>" method="POST">
+      <div class="form-group">
+        <label for="specialty">Chuyên môn:</label>
+        <input type="text" id="specialty" name="specialty" value="<%= doctor.specialty %>" required>
+      </div>
+      <div class="form-group">
+        <label for="location">Địa điểm:</label>
+        <input type="text" id="location" name="location" value="<%= doctor.location %>" required>
+      </div>
+      <div class="form-group">
+        <label for="status">Trạng thái:</label>
+        <select id="status" name="status" required>
+          <option value="active" <%= doctor.status === 'active' ? 'selected' : '' %>>Active</option>
+          <option value="inactive" <%= doctor.status === 'inactive' ? 'selected' : '' %>>Inactive</option>
+          <option value="on_leave" <%= doctor.status === 'on_leave' ? 'selected' : '' %>>On Leave</option>
+        </select>
+      </div>
+      <button type="submit" class="action-button">Cập nhật</button>
+    </form>
+  </div>
+
+  <%- include('partials/footer') %>
+</body>
+</html>

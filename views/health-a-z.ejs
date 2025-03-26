@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HealthHub - Health A-Z</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+  <%- include('partials/header') %>
+
+  <div class="container">
+    <h2>Health A-Z</h2>
+    <% if (error) { %>
+      <p class="error"><%= error %></p>
+    <% } %>
+    <form action="/health-a-z" method="GET" class="search-form">
+      <div class="input-group">
+        <label for="search">Tìm kiếm bệnh</label>
+        <input type="text" id="search" name="search" placeholder="Ví dụ: Asthma" class="search-input">
+      </div>
+      <button type="submit" class="search-button">Tìm kiếm</button>
+    </form>
+
+    <div class="grid">
+      <% if (diseases && diseases.length > 0) { %>
+        <% diseases.forEach(disease => { %>
+          <div class="card">
+            <img src="<%= disease.image || 'https://via.placeholder.com/150?text=Disease' %>" alt="Disease Image" class="disease-image">
+            <h3><%= disease.disease_name %></h3>
+            <p>Triệu chứng: <%= disease.symptoms %></p>
+          </div>
+        <% }) %>
+      <% } else { %>
+        <p>Không tìm thấy bệnh.</p>
+      <% } %>
+    </div>
+  </div>
+
+  <%- include('partials/footer') %>
+</body>
+</html>

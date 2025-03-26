@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HealthHub - Book Appointment</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+  <%- include('partials/header') %>
+
+  <div class="form-container">
+    <h2>Book Appointment</h2>
+    <% if (error) { %>
+      <p class="error"><%= error %></p>
+    <% } %>
+    <form action="/experts/book" method="POST">
+      <input type="hidden" name="doctor_id" value="<%= doctor_id %>">
+
+      <label for="date_time">Date and Time</label>
+      <input type="datetime-local" id="date_time" name="date_time" required>
+
+      <label for="health_issue">Health Issue</label>
+      <textarea id="health_issue" name="health_issue" rows="3" required></textarea>
+
+      <div style="display: flex; align-items: center; gap: 8px;">
+        <label for="health_issue">Hình thức thanh toán:</label>
+        <h3 style="margin: 0;">Trả trực tiếp</h3>
+      </div>      <button type="submit">Book Appointment</button>
+    </form>
+  </div>
+
+  <%- include('partials/footer') %>
+</body>
+</html>

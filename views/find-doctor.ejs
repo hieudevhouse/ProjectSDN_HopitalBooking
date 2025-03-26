@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HealthHub - Find a Doctor</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/styles.css">
+  <link rel="stylesheet" href="/css/doctor.css">
+</head>
+<body>
+  <%- include('partials/header') %>
+
+  <div class="container">
+    <h2>Tìm Bác Sĩ</h2>
+    <% if (error) { %>
+      <p class="error"><%= error %></p>
+    <% } %>
+    <form action="/find-doctor" method="GET" class="search-form">
+      <div class="input-group">
+        <label for="specialty">Chuyên môn</label>
+        <input type="text" id="specialty" name="specialty" placeholder="Ví dụ: Cardiology" class="search-input">
+      </div>
+      <div class="input-group">
+        <label for="location">Địa điểm</label>
+        <input type="text" id="location" name="location" placeholder="Ví dụ: Hanoi" class="search-input">
+      </div>
+      <button type="submit" class="search-button">Tìm kiếm</button>
+    </form>
+
+    <!-- Thêm nút Trở lại -->
+    <div class="button-container">
+      <a href="/find-doctor" class="back-button">Hiển thị tất cả bác sĩ</a>
+    </div>
+
+    <div class="grid">
+      <% if (doctors && doctors.length > 0) { %>
+        <% doctors.forEach(doctor => { %>
+          <div class="card">
+            <img src="<%= doctor.avatar || 'https://via.placeholder.com/150?text=Doctor' %>" alt="Doctor Avatar" class="doctor-avatar">
+            <h3>Dr. <%= doctor.user_id ? doctor.user_id.name : 'Không xác định' %></h3>
+            <p>Chuyên môn: <%= doctor.specialty %></p>
+            <p><strong>Năm kinh nghiêm:</strong> <%= doctor.years_of_experience %> Năm</p>
+            <p><strong>Giá khám:</strong> <%= doctor.price %></p>
+
+            <p>Địa điểm: <%= doctor.location %></p>
+
+            <a href="/experts/book?doctor_id=<%= doctor._id %>" class="btn">Đặt Lịch Khám</a>
+          </div>
+        <% }) %>
+      <% } else { %>
+        <p>Không tìm thấy bác sĩ.</p>
+      <% } %>
+    </div>
+  </div>
+
+  <%- include('partials/footer') %>
+</body>
+</html>

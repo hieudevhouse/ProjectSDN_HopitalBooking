@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HealthHub - Buy Medicines</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+  <%- include('partials/header') %>
+
+  <div class="container">
+    <h2>Mua thuốc</h2>
+    <% if (error) { %>
+      <p class="error"><%= error %></p>
+    <% } %>
+    <form action="/buy-medicine" method="GET">
+      <label for="type">Loại</label>
+      <input type="text" id="type" name="type" placeholder="Tìm kiếm theo loại thuốc">
+
+      <label for="illness">Triệu chứng bênh</label>
+      <input type="text" id="illness" name="illness" placeholder="Tìm kiếm theo bệnh">
+
+      <button type="submit">Tìm kiếm</button>
+    </form>
+
+    <div class="grid">
+      <% if (medicines && medicines.length > 0) { %>
+        <% medicines.forEach(medicine => { %>
+          <div class="card">
+            <h3><%= medicine.name %></h3>
+            <p>Loại: <%= medicine.type %></p>
+            <p>Giá: <%= medicine.price %>.VND</p>
+            <form action="/buy-medicine/add-to-cart" method="POST">
+              <input type="hidden" name="medicine_id" value="<%= medicine._id %>">
+              <label for="quantity">Số lượng</label>
+              <input type="number" name="quantity" value="1" min="1" max="<%= medicine.stock %>">
+              <button type="submit">Thêm vào giỏ hàng</button>
+            </form>
+          </div>
+        <% }) %>
+      <% } else { %>
+        <p>Không tìm thấy thuốc</p>
+      <% } %>
+    </div>
+
+    <% if (cart && cart.length > 0) { %>
+      <h2>Giỏ hàng của bạn</h2>
+      <div class="grid">
+        <% cart.forEach(item => { %>
+          <div class="card">
+            <h3><%= item.medicine.name %></h3>
+            <p>Số lượng: <%= item.quantity %></p>
+            <p>Tổng tiền: <%= item.medicine.price * item.quantity %>.VND</p>
+          </div>
+        <% }) %>
+      </div>
+      <a href="/payment" class="btn">Xử lí thanh toán</a>
+    <% } %>
+  </div>
+
+  <%- include('partials/footer') %>
+</body>
+</html>

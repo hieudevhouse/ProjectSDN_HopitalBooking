@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HealthHub - News</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+  <%- include('partials/header') %>
+
+  <div class="container">
+    <h2>Health News</h2>
+    <% if (error) { %>
+      <p class="error"><%= error %></p>
+    <% } %>
+    <div class="grid">
+      <% if (news && news.length > 0) { %>
+        <% news.forEach(article => { %>
+          <div class="card">
+            <h3><%= article.title %></h3>
+            <p><%= article.content %></p>
+            <p>Published: <%= article.created_at.toDateString() %></p>
+          </div>
+        <% }) %>
+      <% } else { %>
+        <p>No news articles found.</p>
+      <% } %>
+    </div>
+  </div>
+
+  <%- include('partials/footer') %>
+</body>
+</html>

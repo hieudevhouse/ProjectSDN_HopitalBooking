@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HealthHub - Profile</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+  <%- include('partials/header') %>
+
+  <div class="container">
+    <h2>Profile</h2>
+    <div class="card">
+      <h3><%= user.name %></h3>
+      <p>Email: <%= user.email %></p>
+      <p>Phone: <%= user.phone %></p>
+      <p>Role: <%= user.role %></p>
+    </div>
+
+    <!-- Phần thêm các nút để xem lịch sử mua hàng, bệnh án, và đơn thuốc -->
+    <div class="user-actions">
+      <h3>Your Information</h3>
+      <div class="action-buttons">
+        <a href="/order-history" class="action-btn">View Order History</a>
+        <a href="/medical-records" class="action-btn">View Medical Records</a>
+        <a href="/prescriptions" class="action-btn">View Prescriptions</a>
+      </div>
+    </div>
+
+    <h2>Your Feedback</h2>
+    <div class="grid">
+      <% if (feedbacks && feedbacks.length > 0) { %>
+        <% feedbacks.forEach(feedback => { %>
+          <div class="card">
+            <h3><%= feedback.subject %></h3>
+            <p><%= feedback.content %></p>
+            <p>Submitted: <%= feedback.last_submission.toDateString() %></p>
+          </div>
+        <% }) %>
+      <% } else { %>
+        <p>No feedback submitted yet.</p>
+      <% } %>
+    </div>
+  </div>
+
+  <%- include('partials/footer') %>
+</body>
+</html>

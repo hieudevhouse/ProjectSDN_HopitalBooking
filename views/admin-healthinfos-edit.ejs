@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HealthHub - Edit HealthInfo</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+  <%- include('partials/header') %>
+
+  <div class="container">
+    <h2>Sửa Bệnh</h2>
+    <% if (error) { %>
+      <p class="error"><%= error %></p>
+    <% } %>
+
+    <form action="/admin/healthinfos/edit/<%= healthinfo._id %>" method="POST">
+      <div class="form-group">
+        <label for="disease_name">Tên bệnh:</label>
+        <input type="text" id="disease_name" name="disease_name" value="<%= healthinfo.disease_name %>" required>
+      </div>
+      <div class="form-group">
+        <label for="symptoms">Triệu chứng:</label>
+        <textarea id="symptoms" name="symptoms" rows="3" required><%= healthinfo.symptoms %></textarea>
+      </div>
+      <div class="form-group">
+        <label for="description">Mô tả:</label>
+        <textarea id="description" name="description" rows="3"><%= healthinfo.description %></textarea>
+      </div>
+      <div class="form-group">
+        <label for="treatments">Điều trị:</label>
+        <textarea id="treatments" name="treatments" rows="3"><%= healthinfo.treatments %></textarea>
+      </div>
+      <button type="submit" class="action-button">Cập nhật</button>
+    </form>
+  </div>
+
+  <%- include('partials/footer') %>
+</body>
+</html>

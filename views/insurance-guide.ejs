@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HealthHub - Insurance Guide</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+  <%- include('partials/header') %>
+
+  <div class="container">
+    <h2>Hướng dẫn mua bảo hiểm</h2>
+    <% if (error) { %>
+      <p class="error"><%= error %></p>
+    <% } %>
+
+    <!-- Nút Xem lợi ích -->
+    <div class="button-container">
+      <button id="open-benefits-modal" class="benefits-button">Lợi ích mua bảo hiểm</button>
+    </div>
+
+    <!-- Modal hiển thị lợi ích -->
+    <div id="benefits-modal" class="modal">
+      <div class="modal-content">
+        <span id="close-benefits-modal" class="close">&times;</span>
+        <h3>Lợi ích của việc mua bảo hiểm</h3>
+        <ul class="benefits-list">
+          <li>Được chi trả chi phí y tế khi khám chữa bệnh tại các cơ sở y tế liên kết.</li>
+          <li>Hỗ trợ tài chính trong trường hợp nhập viện hoặc phẫu thuật.</li>
+          <li>Giảm gánh nặng tài chính khi gặp các tình huống khẩn cấp về sức khỏe.</li>
+          <li>Nhận các dịch vụ chăm sóc sức khỏe định kỳ miễn phí hoặc giảm giá.</li>
+          <li>Bảo vệ tài chính lâu dài cho bạn và gia đình trước các rủi ro sức khỏe.</li>
+          <li>Ưu đãi khi tham gia các chương trình sức khỏe hoặc kiểm tra y tế toàn diện.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="grid">
+      <% if (insurances && insurances.length > 0) { %>
+        <% insurances.forEach(insurance => { %>
+          <div class="card">
+            <h3>Policy Number: <%= insurance.policy_number %></h3>
+            <p>Provider: <%= insurance.provider %></p>
+            <p>Coverage: <%= insurance.coverage %></p>
+            <p>Status: <%= insurance.status %></p>
+          </div>
+        <% }) %>
+      <% } else { %>
+        <p>Không tìm thấy gói bảo hiểm. <a href="/finance">Mua gói bảo hiểm ngay</a>.</p>
+      <% } %>
+    </div>
+  </div>
+
+  <%- include('partials/footer') %>
+
+  <!-- JavaScript để mở/đóng modal -->
+  <script>
+    // Lấy các phần tử
+    const modal = document.getElementById('benefits-modal');
+    const openModalBtn = document.getElementById('open-benefits-modal');
+    const closeModalBtn = document.getElementById('close-benefits-modal');
+
+    // Mở modal khi nhấn nút "Xem lợi ích"
+    openModalBtn.addEventListener('click', () => {
+      modal.style.display = 'block';
+    });
+
+    // Đóng modal khi nhấn nút "X"
+    closeModalBtn.addEventListener('click', () => {
+      modal.style.display = 'none';
+    });
+
+    // Đóng modal khi nhấn ra ngoài nội dung modal
+    window.addEventListener('click', (event) => {
+      if (event.target === modal) {
+        modal.style.display = 'none';
+      }
+    });
+  </script>
+</body>
+</html>
