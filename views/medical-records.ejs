@@ -41,15 +41,21 @@
                 <td><%= record.treatment %></td>
                 <td>
                   <% if (record.prescription_id) { %>
+                    <a href="http://localhost:3000/prescriptions/<%= record.prescription_id._id %>" target="_blank">
+                      Xem đơn thuốc
+                    </a><br>
                     Đơn thuốc: <%= record.prescription_id.instructions %> <br>
-                    Thuốc: 
+                    Thuốc:
                     <% record.prescription_id.medicine_ids.forEach(medicine => { %>
                       <%= medicine.name %>,
                     <% }) %>
                   <% } else { %>
-                    Không có đơn thuốc
+                    <a href="http://localhost:3000/prescriptions" target="_blank">
+                      Xem đơn thuốc
+                    </a>
                   <% } %>
                 </td>
+                
                 <td><%= record.status %></td>
                 <td><%= record.created_at.toISOString().split('T')[0] %> <%= record.created_at.toISOString().split('T')[1].split('.')[0] %></td>
                 <td><%= record.updated_at.toISOString().split('T')[0] %> <%= record.updated_at.toISOString().split('T')[1].split('.')[0] %></td>
